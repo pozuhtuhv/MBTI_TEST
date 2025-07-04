@@ -4,18 +4,73 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>결과 - ES 유형</title>
-  <link rel="stylesheet" href="style/style.css" />
-</head>
-<body class="result-body">
-  <div class="result-background"></div>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
 
-  <div class="result-content">
-    <h1>ES 유형</h1>
-    <p>당신은 현실적이고 외향적인 성향을 가진 활동가입니다.<br/>실용적이며 사람들과 잘 어울립니다.</p>
+    .container {
+      max-width: 450px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .result-title {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .result-desc {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #eee;
+      text-decoration: none;
+      color: #000;
+      width: 80%;
+      max-width: 300px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="result-title">ES 유형</h1>
+    <p class="result-desc">
+      당신은 깊은 사고를 하는 조용한 이상주의자입니다.<br />
+      혼자만의 통찰과 상상력을 중시합니다.
+    </p>
     <div class="button-group">
       <a href="index.html" class="btn">다시 하기</a>
       <a href="#" class="btn">공유하기</a>
-      <a href="index.html" class="btn">다시 하기</a>
     </div>
   </div>
 </body>
