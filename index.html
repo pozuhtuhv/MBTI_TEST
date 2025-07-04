@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MBTI 스타일 설문</title>
+  <title>나에게 맞는 숙면 컬러는?</title>
   <link rel="stylesheet" href="style/style.css" />
   <style>
     body {
@@ -14,16 +14,35 @@
     }
 
     .container {
-      max-width: 600px;
+      max-width: 450px;
       margin: 60px auto;
       background: white;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
-    h1 {
-      text-align: center;
+    .container img {
+      width: 40%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #ddd;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .progress {
+      height: 100%;
+      background-color: #7f9cf5;
+      width: 0%;
+      transition: width 0.3s ease;
     }
 
     .question-box {
@@ -35,27 +54,62 @@
       margin-top: 20px;
     }
 
+    #options-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
     .option {
-      display: block;
-      margin: 10px 0;
-      padding: 12px;
-      border: 1px solid #ccc;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
       border-radius: 8px;
+      background-color: #eee;
       cursor: pointer;
-      background-color: #f2f2f2;
-      transition: background 0.3s ease;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
     }
 
     .option:hover {
       background-color: #e0e0e0;
     }
+
+    .back-button {
+      margin-top: 20px;
+      background-color: #ccc;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .back-button:hover {
+      background-color: #bbb;
+    }
+
+    .fade-in {
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>성격 유형 테스트</h1>
-    <div class="question-box" id="question-box"></div>
-    <div class="options" id="options-box"></div>
+    <img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/web/upload/category/editor/2024/03/25/05dc5d6b4907ecd12de9df665366c49e.png" alt="숙면 컬러 테스트">
+    <div class="progress-bar"><div id="progress" class="progress"></div></div>
+    <div class="question-box fade-in" id="question-box"></div>
+    <div class="options fade-in" id="options-box"></div>
+    <button class="back-button" id="back-button" style="display:none;">← 이전</button>
   </div>
 
   <script>
@@ -128,38 +182,72 @@
 
     let current = 0;
     const score = { E: 0, I: 0, S: 0, N: 0 };
+    const answers = [];
+
+    function updateProgress() {
+      const progress = document.getElementById("progress");
+      const percent = (current / questions.length) * 100;
+      progress.style.width = percent + "%";
+    }
 
     function showQuestion() {
       const q = questions[current];
-      document.getElementById("question-box").innerText = q.question;
+      const questionBox = document.getElementById("question-box");
+      const optionsBox = document.getElementById("options-box");
+      const backBtn = document.getElementById("back-button");
 
-      const box = document.getElementById("options-box");
-      box.innerHTML = "";
+      questionBox.className = "question-box fade-in";
+      optionsBox.className = "options fade-in";
+
+      questionBox.innerText = q.question;
+      optionsBox.innerHTML = "";
 
       q.options.forEach(opt => {
         const btn = document.createElement("button");
         btn.innerText = opt.text;
         btn.className = "option";
         btn.onclick = () => {
-          score[opt.type]++;
-          current++;
-          if (current < questions.length) {
-            showQuestion();
-          } else {
-            goToResult();
-          }
+          questionBox.classList.remove("fade-in");
+          optionsBox.classList.remove("fade-in");
+          questionBox.classList.add("fade-out");
+          optionsBox.classList.add("fade-out");
+
+          setTimeout(() => {
+            score[opt.type]++;
+            answers[current] = opt.type;
+            current++;
+            if (current < questions.length) {
+              updateProgress();
+              showQuestion();
+            } else {
+              goToResult();
+            }
+          }, 400);
         };
-        box.appendChild(btn);
+        optionsBox.appendChild(btn);
       });
+
+      // 이전 버튼 표시 여부
+      backBtn.style.display = current > 0 ? "inline-block" : "none";
+      updateProgress();
     }
 
-function goToResult() {
-  const EI = score.E >= score.I ? "E" : "I";
-  const SN = score.S >= score.N ? "S" : "N";
-  const resultType = EI + SN; // ES, EN, IS, IN
-  const resultPage = `result_${resultType}.html`;
-  window.location.href = resultPage;
-}
+    document.getElementById("back-button").onclick = () => {
+      if (current > 0) {
+        current--;
+        const prevType = answers[current];
+        if (prevType) score[prevType]--;
+        showQuestion();
+      }
+    };
+
+    function goToResult() {
+      const EI = score.E >= score.I ? "E" : "I";
+      const SN = score.S >= score.N ? "S" : "N";
+      const resultType = EI + SN;
+      const resultPage = `result_${resultType}.html`;
+      window.location.href = resultPage;
+    }
 
     showQuestion();
   </script>
