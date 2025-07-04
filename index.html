@@ -3,17 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MBTI 스타일 설문조사</title>
+  <title>MBTI 스타일 설문</title>
   <link rel="stylesheet" href="style/style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .question-box {
+      margin-top: 30px;
+      font-size: 1.2rem;
+    }
+
+    .options {
+      margin-top: 20px;
+    }
+
+    .option {
+      display: block;
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #f2f2f2;
+      transition: background 0.3s ease;
+    }
+
+    .option:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>성격 유형 테스트</h1>
-    <div id="question-box" class="question"></div>
-    <div id="options-box" class="options"></div>
+    <div class="question-box" id="question-box"></div>
+    <div class="options" id="options-box"></div>
   </div>
 
-  <script src="data/questions.js"></script>
-  <script src="script/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "1. 나는 사람들과 함께 있을 때 에너지를 얻는다.",
+        options: [
+          { text: "매우 그렇다", type: "E" },
+          { text: "약간 그렇다", type: "E" },
+          { text: "약간 아니다", type: "I" },
+          { text: "전혀 아니다", type: "I" }
+        ]
+      },
+      {
+        question: "2. 나는 현실적이고 구체적인 것을 선호한다.",
+        options: [
+          { text: "매우 그렇다", type: "S" },
+          { text: "약간 그렇다", type: "S" },
+          { text: "약간 아니다", type: "N" },
+          { text: "전혀 아니다", type: "N" }
+        ]
+      },
+      {
+        question: "3. 사람들과 함께 활동할 때 더 즐겁다.",
+        options: [
+          { text: "매우 그렇다", type: "E" },
+          { text: "그렇다", type: "E" },
+          { text: "가끔은 피곤하다", type: "I" },
+          { text: "혼자가 더 편하다", type: "I" }
+        ]
+      },
+      {
+        question: "4. 나는 감각적으로 정보를 받아들이는 편이다.",
+        options: [
+          { text: "현실적인 것이 좋다", type: "S" },
+          { text: "지금에 집중한다", type: "S" },
+          { text: "미래 가능성을 본다", type: "N" },
+          { text: "직관과 영감을 따른다", type: "N" }
+        ]
+      },
+      // 총 8문항까지 추가 가능
+    ];
+
+    let current = 0;
+    const score = { E: 0, I: 0, S: 0, N: 0 };
+
+    function showQuestion() {
+      const q = questions[current];
+      document.getElementById("question-box").innerText = q.question;
+
+      const box = document.getElementById("options-box");
+      box.innerHTML = "";
+
+      q.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.innerText = opt.text;
+        btn.className = "option";
+        btn.onclick = () => {
+          score[opt.type]++;
+          current++;
+          if (current < questions.length) {
+            showQuestion();
+          } else {
+            goToResult();
+          }
+        };
+        box.appendChild(btn);
+      });
+    }
+
+    function goToResult() {
+      const EI = score.E >= score.I ? "E" : "I";
+      const SN = score.S >= score.N ? "S" : "N";
+      const resultPage = `result_${EI}${SN}.html`;
+      window.location.href = resultPage;
+    }
+
+    showQuestion();
+  </script>
 </body>
 </html>
