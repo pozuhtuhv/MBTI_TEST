@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>정상가 계산기</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      color: #333;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      color: #222;
+    }
+
+    .result span {
+      font-weight: bold;
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>정상가 계산기</h2>
+
+    <label for="salePrice">판매가 (₩)</label>
+    <input type="number" id="salePrice" placeholder="예: 75300" />
+
+    <label for="discountPercent">할인율 (%)</label>
+    <input type="number" id="discountPercent" placeholder="예: 15" />
+
+    <button onclick="calculateOriginal()">정상가 계산</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function roundToNearestTen(value) {
+      return Math.round(value / 100) * 100;
+    }
+
+function calculateOriginal() {
+  const sale = parseFloat(document.getElementById('salePrice').value);
+  const percent = parseFloat(document.getElementById('discountPercent').value);
+  const resultDiv = document.getElementById('result');
+
+  if (isNaN(sale) || isNaN(percent) || sale <= 0 || percent < 0 || percent >= 100) {
+    resultDiv.innerHTML = '유효한 판매가와 할인율을 입력하세요.';
+    return;
+  }
+
+  const originalRaw = sale / (1 - percent / 100);
+  const originalRounded = Math.round(originalRaw / 100) * 100; // 💡 100의 자리 반올림
+
+  resultDiv.innerHTML = `
+    정상가: <span>₩${originalRounded.toLocaleString()}</span>
+  `;
+}
+  </script>
+</body>
+</html>
