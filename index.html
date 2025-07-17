@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>나에게 맞는 숙면 컬러는?</title>
+  <title>[쿨타이드 MBTI] 이불이 나보다 성격이 확실하네?</title>
   <link rel="stylesheet" href="style/style.css" />
   <style>
     body {
@@ -12,7 +12,6 @@
       margin: 0;
       padding: 0;
     }
-
     .container {
       height: 600px;
       position: relative;
@@ -25,7 +24,6 @@
       text-align: center;
       z-index: 0;
     }
-
     .container::before {
       content: "";
       position: absolute;
@@ -34,13 +32,11 @@
       filter: blur(8px);
       z-index: -1;
     }
-
     .container img {
       width: 40%;
       border-radius: 12px;
       margin-bottom: 10px;
     }
-
     .progress-bar {
       width: 100%;
       background-color: #ddd;
@@ -49,23 +45,19 @@
       overflow: hidden;
       margin-bottom: 20px;
     }
-
     .progress {
       height: 100%;
       background-color: #000000;
       width: 0%;
       transition: width 0.3s ease;
     }
-
     .question-box {
       margin-top: 30px;
       font-size: 1.2rem;
     }
-
     .options {
       margin-top: 20px;
     }
-
     #options-box {
       display: flex;
       flex-direction: column;
@@ -73,10 +65,9 @@
       gap: 16px;
       margin-top: 30px;
     }
-
     .option {
       padding: 12px 24px;
-      font-size: 1rem;
+      font-size: 13px;
       border: none;
       border-radius: 8px;
       background-color: #eee;
@@ -85,11 +76,9 @@
       max-width: 400px;
       text-align: center;
     }
-
     .option:hover {
       background-color: #e0e0e0;
     }
-
     .back-button {
       margin-top: 20px;
       background-color: #ccc;
@@ -99,16 +88,13 @@
       cursor: pointer;
       font-size: 0.9rem;
     }
-
     .back-button:hover {
       background-color: #bbb;
     }
-
     .fade-in {
       opacity: 1;
       transition: opacity 0.4s ease;
     }
-
     .fade-out {
       opacity: 0;
       transition: opacity 0.4s ease;
@@ -127,79 +113,74 @@
   <script>
     const questions = [
       {
-        question: "1. 하루 일과를 시작하는 나만의 방법은?.",
+        question: "Q1. 퇴근 후, 내가 딱 원하는 건?",
         options: [
-          { text: "상쾌한 기분으로 부지런히 움직인다.", type: "E" },
-          { text: "천천히 여유롭게 하루를 준비한다.", type: "I" },
-          { text: "아침은 힘들어... 최대한 늦잠을 잔다.", type: "I" }
+          { text: "사람없이 조용한 방+딱 내 체온만큼 시원한 이불", types: ["EN", "IN"] },
+          { text: "치킨+맥주+넷플릭스+에어컨=극락", types: ["ES", "EN"] },
+          { text: "잠옷 입고 바로 셀카.. 오늘 하루도 예뻤다 나 자신 .", types: ["IS"] }
         ]
       },
       {
-        question: "2. 침대에서 가장 중요한 건?",
+        question: "Q2. 더운 여름 밤, 당신의 이불 사용법은?",
         options: [
-          { text: "포근한 촉감과 부드러움", type: "S" },
-          { text: "스타일과 컬러감이 예쁜 디자인", type: "S" },
-          { text: "쾌적하고 시원한 사용감", type: "N" }
+          { text: "다리 한 쪽만 덮기", types: ["ES", "EN"] },
+          { text: "배만 덮기", types: ["IS"] },
+          { text: "여름에도 덮는 이불은 포근해야 한다.", types: ["IN", "IS"] }
         ]
       },
       {
-        question: "3. 스트레스를 받을 때 나는?",
+        question: "Q3. 내가 생각하는 ‘여름 스트레스 해소법’은?",
         options: [
-          { text: "운동을 하거나 활동적으로 풀어낸다.", type: "E" },
-          { text: "조용히 쉬면서 내면을 정리한다.", type: "E" },
-          { text: "친구들과 만나서 신나게 놀아버린다.", type: "I" }
+          { text: "찬물 샤워 후 침대에 눕기=천국 도착", types: ["EN"] },
+          { text: "집 밖은 위험해.. 잠으로 풀충전", types: ["EN"] },
+          { text: "놀 준비 완료! 물놀이, 여행은 무조건!", types: ["IS", "ES"] }
         ]
       },
       {
-        question: "4. 나에게 '완벽한 밤'이란?",
+        question: "Q4. 에어컨과 나의 거리감은?",
         options: [
-          { text: "향초를 켜고 조용한 음악과 함께 힐링하는 밤", type: "S" },
-          { text: "좋아하는 사람들과 이야기하며 보내는 밤", type: "S" },
-          { text: "혼자만의 공간에서 아무 생각 없이 누워있는 밤", type: "N" }
+          { text: "리모컨은 내 손안에, 한 시간마다 정조준", types: ["EN", "ES"] },
+          { text: "직빵은 피하고 싶어.. 벽에 튕겨오는 간접풍 애호가", types: ["IN"] },
+          { text: "에어컨보다는 선풍기가 더 좋아", types: ["IS", "IN"] }
         ]
       },
       {
-        question: "5. 여행 스타일은?",
+        question: "Q5. 세탁한 침구를 다시 깔았을 때 나는?",
         options: [
-          { text: "철저한 계획! 일정과 장소를 미리 다 정해둔다.", type: "S" },
-          { text: "어느 정도 계획은 하지만 즉흥적인 요소도 필요!", type: "N" },
-          { text: "무계획이 곧 자유! 발길 닿는 대로 떠난다.", type: "N" }
+          { text: "정리 끝낸 스스로에게 감탄", types: ["IS", "ES"] },
+          { text: "코 박고 냄새부터 맡는다. 뽀송하고 향기로워!", types: ["IN"] },
+          { text: "그냥 또 금방 더러워질 걸.. 감흥없음", types: ["EN", "ES"] }
         ]
       },
       {
-        question: "6. 내 방을 꾸밀 때 가장 중요하게 생각하는 건?",
+        question: "Q6. 침대에 누운지 3초만에 하는 생각은?",
         options: [
-          { text: "색감과 분위기! 감성 가득한 인테리어가 중요해", type: "S" },
-          { text: "실용성이 최고! 깔끔하고 정돈된 공간이 좋아", type: "S" },
-          { text: "내 취향이 담긴 소품들! 개성 넘치는 스타일이 중요해", type: "N" }
+          { text: "아 맞다.. 폰 충전 안 꽂았다. (근데 안 일어남)", types: ["EN"] },
+          { text: "이불 속이 세상에서 제일 안전해", types: ["IN", "IS"] },
+          { text: "누운김에 쇼츠 한 편만… 하다가 새벽 2시", types: ["ES"] }
         ]
-      },
-      {
-        question: "7. 나를 가장 잘 표현하는 말은?",
-        options: [
-          { text: "감성적이고 분위기를 중요하게 생각하는 편", type: "S" },
-          { text: "열정적이고 활발하며 사람들과 어울리는 걸 좋아함", type: "S" },
-          { text: "차분하고 신중한 성격, 혼자 있는 시간이 필요함", type: "N" }
-        ]
-      },
-      {
-        question: "8. 내가 꿈꾸는 침실 공간은?",
-        options: [
-          { text: "부드러운 파스텔 톤의 포근한 방", type: "S" },
-          { text: "모던하고 깔끔한 호텔 스타일", type: "S" },
-          { text: "개성 넘치는 믹스매치 스타일", type: "N" }
-        ]
-      },
+      }
     ];
 
     let current = 0;
-    const score = { E: 0, I: 0, S: 0, N: 0 };
+    const score = { EN: 0, IN: 0, ES: 0, IS: 0 };
     const answers = [];
 
     function updateProgress() {
       const progress = document.getElementById("progress");
       const percent = (current / questions.length) * 100;
       progress.style.width = percent + "%";
+    }
+
+    function recalculateScore() {
+      score.EN = score.IN = score.ES = score.IS = 0;
+      answers.forEach(typeList => {
+        typeList.forEach(type => {
+          if (score.hasOwnProperty(type)) {
+            score[type]++;
+          }
+        });
+      });
     }
 
     function showQuestion() {
@@ -225,21 +206,25 @@
           optionsBox.classList.add("fade-out");
 
           setTimeout(() => {
-            score[opt.type]++;
-            answers[current] = opt.type;
-            current++;
-            if (current < questions.length) {
-              updateProgress();
-              showQuestion();
+            if (Array.isArray(opt.types)) {
+              answers[current] = opt.types;
+              current++;
+              recalculateScore();
+
+              if (current < questions.length) {
+                updateProgress();
+                showQuestion();
+              } else {
+                goToResult();
+              }
             } else {
-              goToResult();
+              alert("타입 데이터가 잘못되었습니다.");
             }
           }, 400);
         };
         optionsBox.appendChild(btn);
       });
 
-      // 이전 버튼 표시 여부
       backBtn.style.display = current > 0 ? "inline-block" : "none";
       updateProgress();
     }
@@ -247,16 +232,15 @@
     document.getElementById("back-button").onclick = () => {
       if (current > 0) {
         current--;
-        const prevType = answers[current];
-        if (prevType) score[prevType]--;
+        answers.pop();
+        recalculateScore();
         showQuestion();
       }
     };
 
     function goToResult() {
-      const EI = score.E >= score.I ? "E" : "I";
-      const SN = score.S >= score.N ? "S" : "N";
-      const resultType = EI + SN;
+      const sorted = Object.entries(score).sort((a, b) => b[1] - a[1]);
+      const resultType = sorted[0][0];
       const resultPage = `result_${resultType}.html`;
       window.location.href = resultPage;
     }
