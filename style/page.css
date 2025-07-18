@@ -1,0 +1,93 @@
+body {
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    height: 600px;
+    position: relative;
+    max-width: 450px;
+    margin: 10px auto;
+    padding: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    z-index: 0;
+}
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../assets/img/background.jpg') center/cover no-repeat;
+    filter: blur(8px);
+    z-index: -1;
+}
+.container img {
+    width: 40%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.progress {
+    height: 100%;
+    background-color: #000000;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+.question-box {
+    margin-top: 30px;
+    font-size: 1.2rem;
+}
+.options {
+    margin-top: 20px;
+}
+#options-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+.option {
+    padding: 12px 24px;
+    font-size: 13px;
+    border: none;
+    border-radius: 8px;
+    background-color: #eee;
+    cursor: pointer;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+.option:hover {
+    background-color: #e0e0e0;
+}
+.back-button {
+    margin-top: 20px;
+    background-color: #ccc;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.back-button:hover {
+    background-color: #bbb;
+}
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
