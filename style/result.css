@@ -19,18 +19,16 @@ body {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  margin-bottom: 20px;
 }
 
 .result-title {
   font-size: 1.6rem;
-  margin-bottom: 20px;
 }
 
 .result-subtitle_EN{
   font-size: 1.2rem;
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   background-color: #007bff;
   border-radius: 5px;
 }
@@ -38,7 +36,7 @@ body {
 .result-subtitle_ES{
   font-size: 1.2rem;
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   background-color: #97cbae;
   border-radius: 5px;
 }
@@ -46,7 +44,7 @@ body {
 .result-subtitle_IN{
   font-size: 1.2rem;
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   background-color: #dbd6c3;
   border-radius: 5px;
 }
@@ -54,7 +52,7 @@ body {
 .result-subtitle_IS{
   font-size: 1.2rem;
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   background-color: #aa6060;
   border-radius: 5px;
 }
