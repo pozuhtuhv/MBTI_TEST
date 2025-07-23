@@ -8,6 +8,7 @@
 </head>
 <body>
   <div id="start-screen" class="start-screen fade-in">
+    <img src="./assets/img/start_background.jpg" class="start-bg" alt="시작 배경" />
     <button class="start-btn fade-in" id="start-btn">시작하기</button>
   </div>
   <div class="container">
@@ -15,8 +16,9 @@
     <div class="question-box fade-in" id="question-box"></div>
     <div class="options fade-in" id="options-box"></div>
     <button class="back-button" id="back-button" style="display:none;">← 이전</button>
-    <div class="logo"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/web/upload/category/editor/2024/03/25/05dc5d6b4907ecd12de9df665366c49e.png" alt="숙면 컬러 테스트"></div>
   </div>
+    <div class="logo"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/web/upload/category/editor/2024/03/25/05dc5d6b4907ecd12de9df665366c49e.png">
+    </div>
   
   <script>
     const questions = [
@@ -171,8 +173,18 @@
     }
 
     document.getElementById('start-btn').onclick = () => {
-      document.getElementById('start-screen').style.display = 'none';
-      showQuestion();
+      const startScreen = document.getElementById('start-screen');
+
+      // 강제로 리플로우 발생시켜 transition 적용 유도
+      startScreen.classList.remove('fade-in');
+      void startScreen.offsetWidth; // ← 이것이 핵심!
+      startScreen.classList.add('fade-out');
+
+      setTimeout(() => {
+        startScreen.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        showQuestion();
+      }, 400); // fade-out transition 시간과 일치
     };
   </script>
 </body>
