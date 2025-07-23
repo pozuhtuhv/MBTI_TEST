@@ -60,6 +60,7 @@ body {
   width: 100%;
   max-width: 480px;
   min-height: 100vh;
+  overflow: hidden;
   margin: 0 auto;
   padding: 1vh 16px 80px;
   box-sizing: border-box;
@@ -81,7 +82,7 @@ body {
 
 .progress-bar {
   width: 100%;
-  background-color: #04587c;
+  background-color: #d5d5d5;
   height: 6px;
   border-radius: 3px;
   overflow: hidden;
@@ -90,32 +91,32 @@ body {
 
 .progress {
   height: 100%;
-  background-color: #d5d5d5;
+  background-color: #04587c;
   width: 0%;
   transition: width 0.3s ease;
 }
 
 .question-box {
-  margin-top: 12vh;;
-  font-size: 2.47vh;
+  margin-top: 6vh;;
+  font-size: clamp(16px, 2.3vh, 20px);;
   font-weight: 600;
   text-align: center;
   padding: 0 12px;
 }
 
 .options {
-  margin-top: 12vh;
+  margin-top: 15vh;
+  gap: 8vh;
   display: flex;
   flex-direction: column;
-  gap: 8vh;
   align-items: center;
 }
 
 .option {
   width: 100%;
   max-width: 100%;
-  padding: 14px 18px;
-  font-size: 1rem;
+  padding: 12px 16px;
+  font-size: clamp(14px, 2vh, 18px);
   border: none;
   border-radius: 8px;
   background-color: #fff;
@@ -130,7 +131,7 @@ body {
 }
 
 .back-button {
-  margin-top: 10vh;
+  margin-top: 4vh;
   padding: 10px 18px;
   background-color: #fff;
   border: none;
@@ -167,4 +168,10 @@ body {
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
+}
+
+@media screen and (max-height: 600px) {
+  .question-box { margin-top: 2vh; }
+  .options { margin-top: 2vh; gap: 3vh; }
+  .back-button { margin-top: 2vh; }
 }
