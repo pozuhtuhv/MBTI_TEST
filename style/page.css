@@ -39,12 +39,13 @@ body {
 .start-btn {
   padding: 12px 24px;
   font-size: 1.2rem;
-  border: none;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ffffff;
+  border-radius: 26px;
+  background-color: #04587c;
   cursor: pointer;
   margin-top: 50vh;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 35%);
+  color: #ffffff;
   transition: background-color 0.3s ease;
   z-index: 1;
 }
@@ -74,7 +75,7 @@ body {
 
 .progress-bar {
   width: 100%;
-  background-color: #000;
+  background-color: #04587c;
   height: 6px;
   border-radius: 3px;
   overflow: hidden;
@@ -83,21 +84,21 @@ body {
 
 .progress {
   height: 100%;
-  background-color: #fff;
+  background-color: #d5d5d5;
   width: 0%;
   transition: width 0.3s ease;
 }
 
 .question-box {
-  margin-top: 5vh;
-  font-size: 1.1rem;
-  font-weight: 500;
+  margin-top: 12vh;;
+  font-size: 2.47vh;
+  font-weight: 600;
   text-align: center;
   padding: 0 12px;
 }
 
 .options {
-  margin-top: 25%;
+  margin-top: 12vh;
   display: flex;
   flex-direction: column;
   gap: 8vh;
