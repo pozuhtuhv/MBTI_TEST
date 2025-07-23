@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style/page.css" />
 </head>
 <body>
+  <div id="start-screen" class="start-screen">
+    <button id="start-btn" class="start-btn">시작하기</button>
+  </div>
   <div class="container">
     <div class="progress-bar"><div id="progress" class="progress"></div></div>
     <div class="question-box fade-in" id="question-box"></div>
@@ -150,7 +153,10 @@
       window.location.href = resultPage;
     }
 
-    showQuestion();
+    document.getElementById('start-btn').onclick = () => {
+      document.getElementById('start-screen').style.display = 'none';
+      showQuestion();
+    };
   </script>
 </body>
 </html>
