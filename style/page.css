@@ -75,7 +75,7 @@ body {
   height: 6px;
   border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-top: -100px;
 }
 
 .progress {
@@ -86,7 +86,7 @@ body {
 }
 
 .question-box {
-  margin-top: 10%;
+  margin-top: 30%;
   font-size: 1.1rem;
   font-weight: 500;
   text-align: center;
