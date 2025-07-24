@@ -46,13 +46,12 @@ body {
 }
 
 .result-subtitle_IN {
-  background-color: #dbd6c3;
+  background-color: #bbaf81;
 }
 
 .result-subtitle_IS {
   background-color: #aa6060;
 }
-
 
 .result-desc {
   font-size: 14px;
@@ -64,30 +63,104 @@ body {
   text-align: center;
 }
 
-.button-group {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  justify-content: center;
-}
-
-.btn {
-  display: inline-block;
-  padding: 11px 5px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 40px;
-  background-color: #eee;
-  text-decoration: none;
-  color: #000;
+.link-btn {
+  margin: 20px auto;
+  display: block;
   width: 85%;
   max-width: 300px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
   text-align: center;
-  cursor: pointer;
+  border-radius: 40px;
+  text-decoration: none;
+  color: #fff;
+  border: none;
 }
 
-.btn:hover {
+/* EN 버튼 색상 */
+.link-btn_EN {
+  background-color: #007bff !important;
+  color: #ffffff !important;
+}
+.link-btn_EN:hover {
+  background-color: #005dc1 !important;
+  color: #ffffff !important;
+}
+
+/* ES 버튼 색상 */
+.link-btn_ES {
+  background-color: #97cbae !important;
+  color: #ffffff !important;
+}
+.link-btn_ES:hover {
+  background-color: #7bb69f !important;
+  color: #ffffff !important;
+}
+
+/* IN 버튼 색상 */
+.link-btn_IN {
+  background-color: #bbaf81 !important;
+  color: #ffffff !important;
+}
+.link-btn_IN:hover {
+  background-color: #c5c0af !important;
+  color: #ffffff !important;
+}
+
+/* IS 버튼 색상 */
+.link-btn_IS {
+  background-color: #aa6060 !important;
+}
+.link-btn_IS:hover {
+  background-color: #924d4d !important;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button-group.icon-style {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 20px 0;
+}
+
+.icon-btn {
+  text-align: center;
+}
+
+.icon-btn a {
+  text-decoration: none;
+  color: #000;
+}
+
+.icon-btn .circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+  font-size: 20px;
+  transition: background-color 0.2s;
+}
+
+.icon-btn .circle:hover {
   background-color: #e0e0e0;
+}
+
+.icon-btn .label {
+  font-size: 13px;
+  line-height: 1.2;
+  display: block;
 }
 
 .popup-overlay {
