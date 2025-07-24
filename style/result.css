@@ -111,9 +111,11 @@ body {
 /* IS 버튼 색상 */
 .link-btn_IS {
   background-color: #aa6060 !important;
+  color: #ffffff !important;
 }
 .link-btn_IS:hover {
   background-color: #924d4d !important;
+  color: #ffffff !important;
 }
 
 .button-group {
