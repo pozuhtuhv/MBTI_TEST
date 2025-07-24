@@ -8,7 +8,7 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body class="fade-start">
   <div class="container">
     <img src="./assets/img/result_EN.jpg" class="result-topimg">
     <h1 class="result-title">블루소다</h1>
@@ -59,6 +59,12 @@
   </div>
 
   <script>
+    // 페이드 인 적용 스크립트
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.remove("fade-start");
+      document.body.classList.add("fade-in");
+    });
+
     const shareBtn = document.getElementById('share-btn');
     const popup = document.getElementById('popup');
     const closeBtn = document.getElementById('close-popup');

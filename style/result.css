@@ -1,9 +1,44 @@
+/* 기본 스타일 */
 body {
   font-family: 'Pretendard', sans-serif;
   background-color: #f9f9f9;
   margin: 0;
   padding: 0;
 }
+
+/* ✅ 페이지 로딩 애니메이션용 클래스 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.fade-start * {
+  opacity: 0;
+}
+
+body.fade-in * {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* 요소별 순차 지연 설정 */
+body.fade-in .container { animation-delay: 0.2s; }
+body.fade-in .result-topimg { animation-delay: 0.3s; }
+body.fade-in .result-title { animation-delay: 0.4s; }
+body.fade-in .result-subtitle_EN,
+body.fade-in .result-subtitle_ES,
+body.fade-in .result-subtitle_IN,
+body.fade-in .result-subtitle_IS { animation-delay: 0.5s; }
+body.fade-in .result-desc { animation-delay: 0.6s; }
+body.fade-in .link-btn { animation-delay: 0.7s; }
+body.fade-in .button-group { animation-delay: 0.8s; }
+body.fade-in .popup-overlay,
+body.fade-in .popup-content { animation-delay: 0.9s; }
 
 .container {
   max-width: 350px;
@@ -78,7 +113,6 @@ body {
   border: none;
 }
 
-/* EN 버튼 색상 */
 .link-btn_EN {
   background-color: #007bff !important;
   color: #ffffff !important;
@@ -88,7 +122,6 @@ body {
   color: #ffffff !important;
 }
 
-/* ES 버튼 색상 */
 .link-btn_ES {
   background-color: #97cbae !important;
   color: #ffffff !important;
@@ -98,7 +131,6 @@ body {
   color: #ffffff !important;
 }
 
-/* IN 버튼 색상 */
 .link-btn_IN {
   background-color: #bbaf81 !important;
   color: #ffffff !important;
@@ -108,7 +140,6 @@ body {
   color: #ffffff !important;
 }
 
-/* IS 버튼 색상 */
 .link-btn_IS {
   background-color: #aa6060 !important;
   color: #ffffff !important;
