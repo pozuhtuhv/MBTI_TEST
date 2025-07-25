@@ -96,7 +96,7 @@ body {
 }
 
 .question-box {
-  margin-top: 12vh;;
+  margin-top: 10vh;;
   font-size: clamp(24px, 2.3vh, 20px);;
   font-weight: 600;
   text-align: center;
