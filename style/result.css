@@ -287,3 +287,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
     padding: 0 2px;
   }
 }
+
+.no-overlay .container::before {
+  display: none;
+}
