@@ -7,8 +7,29 @@
   <link rel="stylesheet" href="style/result.css" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- html2canvas -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <style>
+    .save-btn {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 999;
+      padding: 10px 16px;
+      font-size: 14px;
+      background-color: #098ac1;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 <body class="fade-start">
+  <!-- 저장 버튼 -->
+  <button class="save-btn" onclick="saveResultImage()">이미지 저장</button>
+
   <div class="container">
     <div class="result-hero-bg_EN"></div>
     <div class="result-text-area">
@@ -39,7 +60,9 @@
       </div>
       <div class="icon-btn">
         <a href="https://pf.kakao.com/_cDfLxj">
-          <div class="circle"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;"></div>
+          <div class="circle">
+            <img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;">
+          </div>
           <span class="label">카카오톡 채널</span>
         </a>
       </div>
@@ -63,6 +86,16 @@
       navigator.clipboard.writeText(url);
       alert("링크가 복사되었습니다! 친구에게 공유해보세요.");
     });
+
+    function saveResultImage() {
+      const target = document.querySelector('.container');
+      html2canvas(target, { scale: 2 }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'EN_result.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    }
   </script>
 </body>
 </html>
