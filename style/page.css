@@ -55,7 +55,7 @@ body {
 }
 
 .container {
-  width: 75vh;
+  width: 100%;
   max-width: 480px;
   min-height: 100vh;
   overflow: hidden;
