@@ -111,7 +111,6 @@
       const optionsBox = document.getElementById("options-box");
       const backBtn = document.getElementById("back-button");
 
-      // 페이드 인 초기화
       questionBox.className = "question-box fade-in";
       optionsBox.className = "options fade-in";
       backBtn.classList.remove("fade-out");
@@ -125,7 +124,6 @@
         btn.innerText = opt.text;
         btn.className = "option";
         btn.onclick = () => {
-          // 페이드 아웃 처리
           questionBox.classList.remove("fade-in");
           optionsBox.classList.remove("fade-in");
           questionBox.classList.add("fade-out");
