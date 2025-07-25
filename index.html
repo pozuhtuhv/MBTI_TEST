@@ -176,16 +176,15 @@
     document.getElementById('start-btn').onclick = () => {
       const startScreen = document.getElementById('start-screen');
 
-      // 강제로 리플로우 발생시켜 transition 적용 유도
       startScreen.classList.remove('fade-in');
-      void startScreen.offsetWidth; // ← 이것이 핵심!
+      void startScreen.offsetWidth;
       startScreen.classList.add('fade-out');
 
       setTimeout(() => {
         startScreen.style.display = 'none';
         document.body.style.overflow = 'auto';
         showQuestion();
-      }, 400); // fade-out transition 시간과 일치
+      }, 400);
     };
   </script>
 </body>

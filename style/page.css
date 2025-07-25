@@ -103,14 +103,27 @@ body {
   padding: 0 12px;
 }
 
-.options {
-  margin-top: 12vh;
-  gap: 8vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.option {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 16px;
+  font-size: clamp(14px, 2vh, 18px);
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  word-break: keep-all;
+
+  /* iOS 대응용 추가 */
+  -webkit-tap-highlight-color: transparent; /* 탭시 파란 배경 제거 */
+  -webkit-touch-callout: none; /* 길게 눌렀을 때 복사 팝업 제거 */
+  -webkit-user-select: none; /* 텍스트 선택 방지 */
+  user-select: none;
   -webkit-appearance: none;
   appearance: none;
+  touch-action: manipulation; /* 클릭 반응 향상 */
 }
 
 .option {
