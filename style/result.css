@@ -54,7 +54,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 32vh;
+  height: 50vh;
   background: url('../assets/img/result_EN.jpg') center/cover no-repeat;
   z-index: -1;
 }
@@ -65,7 +65,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 30px;
   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 }
 
@@ -74,7 +74,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 32vh;
+  height: 50vh;
   background: url('../assets/img/result_ES.jpg') center/cover no-repeat;
   z-index: -1;
 }
@@ -85,7 +85,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 30px;
   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 }
 
@@ -94,7 +94,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 32vh;
+  height: 50vh;
   background: url('../assets/img/result_IN.jpg') center/cover no-repeat;
   z-index: -1;
 }
@@ -105,7 +105,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 30px;
   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 }
 
@@ -114,7 +114,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 32vh;
+  height: 50vh;
   background: url('../assets/img/result_IS.jpg') center/cover no-repeat;
   z-index: -1;
 }
@@ -125,7 +125,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 30px;
   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 }
 
@@ -134,6 +134,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding-top: 1vh;
   padding-bottom: 1vh;
+  margin-top: 15vh;
   margin-bottom: 4vh;
   background-color: #ffffff;
 }
