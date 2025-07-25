@@ -289,5 +289,10 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
 }
 
 .no-overlay .container::before {
-  display: none;
+  display: none !important;
+}
+
+.no-fade * {
+  opacity: 1 !important;
+  animation: none !important;
 }

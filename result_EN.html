@@ -88,14 +88,18 @@
     });
 
     function saveResultImage() {
-      document.body.classList.add("no-overlay");
+      document.body.classList.add("no-overlay", "no-fade");
 
-      html2canvas(document.querySelector('.container'), { scale: 2 }).then(canvas => {
+      const target = document.querySelector('.container');
+
+      html2canvas(target, { scale: 2 }).then(canvas => {
         const link = document.createElement('a');
         link.download = 'EN_result.png';
-        link.href = canvas.toDataURL();
+        link.href = canvas.toDataURL('image/png');
         link.click();
-        document.body.classList.remove("no-overlay"); // 복구
+
+        // 다시 원래대로 복원
+        document.body.classList.remove("no-overlay", "no-fade");
       });
     }
   </script>
