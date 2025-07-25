@@ -192,6 +192,8 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   text-decoration: none;
   color: #fff;
   border: none;
+  border: 5px solid #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .link-btn_EN {
