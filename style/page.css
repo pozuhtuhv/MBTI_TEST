@@ -44,7 +44,7 @@ body {
   border-radius: 33px;
   background-color: #04587c;
   cursor: pointer;
-  margin-top: 70%;
+  margin-top: clamp(24vh, 45vh, 50vh);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
   color: #ffffff;
   transition: background-color 0.3s ease;
