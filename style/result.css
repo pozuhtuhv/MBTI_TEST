@@ -41,12 +41,12 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   max-width: 75vh;
   margin: 0px auto;
   background: white;
-  padding: 6vh;
+  padding: 3vh;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
-  padding-top: 320px;
+  padding-top: 31vh;
 }
 
 .result-hero-bg_EN {
@@ -135,7 +135,9 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   padding-top: 1vh;
   padding-bottom: 1vh;
   margin-bottom: 4vh;
+  background-color: #ffffff;
 }
+
   .result-title {
   font-size: 1.6rem;
 }
@@ -192,7 +194,6 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   text-decoration: none;
   color: #fff;
   border: none;
-  border: 5px solid #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
