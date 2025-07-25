@@ -96,15 +96,15 @@ body {
 }
 
 .question-box {
-  margin-top: 13vh;
-  font-size: 2.3vh;
+  margin-top: 10vh;
+  font-size: 20px;
   font-weight: 700;
   text-align: center;
   padding: 0 12px;
 }
 
 .options {
-  margin-top: 15vh;
+  margin-top: 85px;
   gap: 6vh;
   display: flex;
   flex-direction: column;
