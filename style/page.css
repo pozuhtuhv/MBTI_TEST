@@ -96,7 +96,7 @@ body {
 }
 
 .question-box {
-  margin-top: 10vh;;
+  margin-top: 10vh;
   font-size: 2.3vh;
   font-weight: 600;
   text-align: center;
@@ -127,15 +127,17 @@ body {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* PC 전용 hover 효과 */
 .option:hover {
   background-color: #f8f8f8;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* 모바일에서는 hover 무력화 */
 @media (hover: none) and (pointer: coarse) {
   .option:hover {
-    background-color: inherit;
-    box-shadow: inherit;
+    background-color: inherit !important;
+    box-shadow: none !important;
   }
 }
 
@@ -169,6 +171,7 @@ body {
   height: auto;
   border-radius: 12px;
 }
+
 .fade-in {
   opacity: 1;
   transition: opacity 0.4s ease;
