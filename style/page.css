@@ -127,18 +127,9 @@ body {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* PC 전용 hover 효과 */
 .option:hover {
   background-color: #f8f8f8;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* 모바일에서는 hover 무력화 */
-@media (hover: none) and (pointer: coarse) {
-  .option:hover {
-    background-color: inherit !important;
-    box-shadow: none !important;
-  }
 }
 
 .back-button {
