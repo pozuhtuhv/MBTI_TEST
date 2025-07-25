@@ -97,7 +97,7 @@ body {
 }
 
 .question-box {
-  margin-top: 80px;
+  margin-top: 6vh;
   font-size: 20px;
   font-weight: 700;
   text-align: center;
@@ -133,7 +133,7 @@ body {
 }
 
 .back-button {
-  margin-top: 25%;
+  margin-top: 10vh;
   padding: 10px 18px;
   background-color: #ffffff;
   border: 1px solid #ccc;
