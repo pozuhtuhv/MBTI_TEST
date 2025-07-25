@@ -54,7 +54,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 48vh;
+  height: 37vh;
   background: url('../assets/img/result_EN.jpg') center/cover no-repeat;
   z-index: -1;
 }
@@ -74,7 +74,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 48vh;
+  height: 37vh;
   background: url('../assets/img/result_ES.jpg') center/cover no-repeat;
   z-index: -1;
 }
@@ -94,7 +94,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 48vh;
+  height: 37vh;
   background: url('../assets/img/result_IN.jpg') center/cover no-repeat;
   z-index: -1;
 }
@@ -114,7 +114,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 48vh;
+  height: 37vh;
   background: url('../assets/img/result_IS.jpg') center/cover no-repeat;
   z-index: -1;
 }
