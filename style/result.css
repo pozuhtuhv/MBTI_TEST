@@ -46,7 +46,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
-  padding-top: 31vh;
+  padding-top: 25vh;
 }
 
 .result-hero-bg_EN {
@@ -54,7 +54,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 37vh;
+  height: 48vh;
   background: url('../assets/img/result_EN.jpg') center/cover no-repeat;
   z-index: -1;
 }
@@ -74,7 +74,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 37vh;
+  height: 48vh;
   background: url('../assets/img/result_ES.jpg') center/cover no-repeat;
   z-index: -1;
 }
@@ -94,7 +94,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 37vh;
+  height: 48vh;
   background: url('../assets/img/result_IN.jpg') center/cover no-repeat;
   z-index: -1;
 }
@@ -114,7 +114,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   top: 0;
   left: 0;
   width: 100%;
-  height: 37vh;
+  height: 48vh;
   background: url('../assets/img/result_IS.jpg') center/cover no-repeat;
   z-index: -1;
 }
@@ -138,7 +138,7 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   background-color: #ffffff;
 }
 
-  .result-title {
+.result-title {
   font-size: 1.6rem;
 }
 
