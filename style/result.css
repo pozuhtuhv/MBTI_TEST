@@ -38,7 +38,7 @@ body.fade-in .popup-overlay,
 body.fade-in .popup-content { animation-delay: 0.9s; }
 
 .container {
-  max-width: 100%;
+  max-width: 75vh;
   margin: 0px auto;
   background: white;
   padding: 6vh;
