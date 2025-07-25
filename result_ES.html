@@ -27,6 +27,7 @@
       영화, 야식, 이불까지 완벽한 홈바캉스를 위해 준비했어요.<br>
     </p>
     <a href="#" class="btn link-btn link-btn_ES">MBTI 상품 구경가기</a>
+    <a href="#" class="btn link-btn link-btn_ES">온기브 구경가기</a>
     <div class="button-group icon-style">
       <div class="icon-btn">
         <a href="index.html">
@@ -36,25 +37,16 @@
       </div>
       <div class="icon-btn">
         <a href="https://pf.kakao.com/_cDfLxj">
-          <div class="circle"><i class="fas fa-comment-dots"></i></div>
+          <div class="circle"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;"></div>
           <span class="label">카카오톡 채널</span>
         </a>
       </div>
       <div class="icon-btn">
-        <a href="#" id="share-btn">
+        <a href="#" class="share-btn" id="share-btn">
           <div class="circle"><i class="fas fa-share-nodes"></i></div>
           <span class="label">공유하기</span>
         </a>
       </div>
-    </div>
-  </div>
-
-  <div class="popup-overlay" id="popup">
-    <div class="popup-content">
-      <button class="close-btn" id="close-popup">&times;</button>
-      <h2>친구에게 공유하고 더 큰 혜택 받아보세요!</h2>
-      <p>지금 이 페이지를 공유하면 <strong>할인 쿠폰</strong>이 발급됩니다!</p>
-      <button class="share-action">SNS로 공유하기</button>
     </div>
   </div>
 
@@ -64,23 +56,10 @@
       document.body.classList.add("fade-in");
     });
 
-    const shareBtn = document.getElementById('share-btn');
-    const popup = document.getElementById('popup');
-    const closeBtn = document.getElementById('close-popup');
-
-    shareBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      popup.style.display = 'flex';
-    });
-
-    closeBtn.addEventListener('click', () => {
-      popup.style.display = 'none';
-    });
-
-    document.querySelector('.share-action').addEventListener('click', () => {
+    document.querySelector('.share-btn').addEventListener('click', () => {
       const url = window.location.href;
       navigator.clipboard.writeText(url);
-      alert("링크가 복사되었습니다! 친구에게 붙여넣어 보내보세요.");
+      alert("링크가 복사되었습니다! 친구에게 공유해보세요.");
     });
   </script>
 </body>
