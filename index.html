@@ -6,6 +6,7 @@
   <title>[쿨타이드 MBTI] 이불이 나보다 성격이 확실하네?</title>
   <link rel="stylesheet" href="style/page.css" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body.fade-out {
       opacity: 0;
@@ -18,12 +19,24 @@
     <img src="./assets/img/start_background.jpg" class="start-bg" alt="시작 배경" />
     <button class="start-btn" id="start-btn" type="button" aria-label="MBTI 테스트 시작하기">MBTI 테스트 시작하기</button>
   </div>
+
   <div class="container">
-    <div class="progress-bar"><div id="progress" class="progress"></div></div>
+
+    <div class="progress-wrapper">
+      <div class="back-button-wrap">
+        <button class="back-button-small" id="back-button" type="button" aria-label="이전 질문으로">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      </div>
+      <div class="progress-bar">
+        <div id="progress" class="progress"></div>
+      </div>
+    </div>
+
     <div class="question-box" id="question-box"></div>
     <div class="options" id="options-box"></div>
-    <button class="back-button" id="back-button" style="display:none;" type="button" aria-label="이전 질문으로">← 이전</button>
   </div>
+
   <div class="logo">
     <img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/web/upload/category/editor/2024/03/25/05dc5d6b4907ecd12de9df665366c49e.png" alt="로고">
   </div>
@@ -101,115 +114,118 @@
       }
     ];
 
-    let current = 0;
-    const score = { EN: 0, IN: 0, ES: 0, IS: 0 };
-    const answers = [];
+  let current = 0;
+  const score = { EN: 0, IN: 0, ES: 0, IS: 0 };
+  const answers = [];
 
-    function updateProgress() {
-      const progress = document.getElementById("progress");
-      const percent = (current / questions.length) * 100;
-      progress.style.width = percent + "%";
-    }
+  function updateProgress() {
+    const progress = document.getElementById("progress");
+    const percent = (current / questions.length) * 100;
+    progress.style.width = percent + "%";
+  }
 
-    function recalculateScore() {
-      score.EN = score.IN = score.ES = score.IS = 0;
-      answers.forEach(typeList => {
-        typeList.forEach(type => {
-          if (score.hasOwnProperty(type)) {
-            score[type]++;
-          }
-        });
+  function recalculateScore() {
+    score.EN = score.IN = score.ES = score.IS = 0;
+    answers.forEach(typeList => {
+      typeList.forEach(type => {
+        if (score.hasOwnProperty(type)) {
+          score[type]++;
+        }
       });
-    }
+    });
+  }
 
-    window.onload = () => {
-      document.getElementById('start-screen').classList.add('fade-in');
-    };
+  window.onload = () => {
+    document.getElementById('start-screen').classList.add('fade-in');
+  };
 
-    document.getElementById('start-btn').onclick = () => {
-      const startScreen = document.getElementById('start-screen');
-      const startBtn = document.getElementById('start-btn');
-      startBtn.disabled = true;
-      startScreen.classList.remove('fade-in');
-      void startScreen.offsetWidth;
-      startScreen.classList.add('fade-out');
+  document.getElementById('start-btn').onclick = () => {
+    const startScreen = document.getElementById('start-screen');
+    const startBtn = document.getElementById('start-btn');
+    startBtn.disabled = true;
+    startScreen.classList.remove('fade-in');
+    void startScreen.offsetWidth;
+    startScreen.classList.add('fade-out');
 
-      setTimeout(() => {
-        startScreen.style.display = 'none';
-        showQuestion();
-      }, 400);
-    };
+    setTimeout(() => {
+      startScreen.style.display = 'none';
+      showQuestion();
+    }, 400);
+  };
 
-    function showQuestion() {
-      const q = questions[current];
-      const questionBox = document.getElementById("question-box");
-      const optionsBox = document.getElementById("options-box");
-      const backBtn = document.getElementById("back-button");
+  function showQuestion() {
+    const q = questions[current];
+    const questionBox = document.getElementById("question-box");
+    const optionsBox = document.getElementById("options-box");
+    const backBtn = document.getElementById("back-button");
+    const backBtnWrap = document.querySelector(".back-button-wrap");
 
-      questionBox.className = "question-box fade-in";
-      optionsBox.className = "options fade-in";
-      backBtn.classList.remove("fade-out");
-      backBtn.classList.add("fade-in");
+    questionBox.className = "question-box fade-in";
+    optionsBox.className = "options fade-in";
 
-      questionBox.innerText = q.question;
-      optionsBox.innerHTML = "";
+    questionBox.innerText = q.question;
+    optionsBox.innerHTML = "";
 
-      q.options.forEach(opt => {
-        const btn = document.createElement("button");
-        btn.innerText = opt.text;
-        btn.className = "option";
-        btn.type = "button";
-        btn.setAttribute("aria-label", opt.text);
-        btn.onclick = () => {
-          questionBox.classList.remove("fade-in");
-          optionsBox.classList.remove("fade-in");
-          questionBox.classList.add("fade-out");
-          optionsBox.classList.add("fade-out");
-          backBtn.classList.remove("fade-in");
-          backBtn.classList.add("fade-out");
+    q.options.forEach(opt => {
+      const btn = document.createElement("button");
+      btn.innerText = opt.text;
+      btn.className = "option";
+      btn.type = "button";
+      btn.setAttribute("aria-label", opt.text);
+      btn.onclick = () => {
+        questionBox.classList.remove("fade-in");
+        optionsBox.classList.remove("fade-in");
+        questionBox.classList.add("fade-out");
+        optionsBox.classList.add("fade-out");
 
-          setTimeout(() => {
-            if (Array.isArray(opt.types)) {
-              answers[current] = opt.types;
-              current++;
-              recalculateScore();
+        setTimeout(() => {
+          if (Array.isArray(opt.types)) {
+            answers[current] = opt.types;
+            current++;
+            recalculateScore();
 
-              if (current < questions.length) {
-                updateProgress();
-                showQuestion();
-              } else {
-                goToResult();
-              }
+            if (current < questions.length) {
+              updateProgress();
+              showQuestion();
             } else {
-              alert("타입 데이터가 잘못되었습니다.");
+              goToResult();
             }
-          }, 400);
-        };
-        optionsBox.appendChild(btn);
-      });
+          } else {
+            alert("타입 데이터가 잘못되었습니다.");
+          }
+        }, 400);
+      };
+      optionsBox.appendChild(btn);
+    });
 
-      backBtn.style.display = current > 0 ? "inline-block" : "none";
-      updateProgress();
+    if (current > 0) {
+      backBtnWrap.classList.add("show");
+    } else {
+      backBtnWrap.classList.remove("show");
     }
 
-    document.getElementById("back-button").onclick = () => {
-      if (current > 0) {
-        current--;
-        answers.pop();
-        recalculateScore();
-        showQuestion();
-      }
-    };
+    updateProgress();
+  }
 
-    function goToResult() {
-      document.body.classList.add('fade-out');
-      setTimeout(() => {
-        const sorted = Object.entries(score).sort((a, b) => b[1] - a[1]);
-        const resultType = sorted[0][0];
-        localStorage.setItem('mbti_result', resultType);
-        window.location.href = `result_${resultType}.html`;
-      }, 400);
+  document.getElementById("back-button").onclick = () => {
+    if (current > 0) {
+      current--;
+      answers.pop();
+      recalculateScore();
+      showQuestion();
     }
-  </script>
+  };
+
+  function goToResult() {
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+      const sorted = Object.entries(score).sort((a, b) => b[1] - a[1]);
+      const resultType = sorted[0][0];
+      localStorage.setItem('mbti_result', resultType);
+      window.location.href = `result_${resultType}.html`;
+    }, 400);
+  }
+</script>
+
 </body>
 </html>
