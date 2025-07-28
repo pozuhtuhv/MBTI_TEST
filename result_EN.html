@@ -33,14 +33,27 @@
         </p>
     </div>
     <a href="#" class="btn link-btn link-btn_EN">MBTI 제품 구경가기</a>
-    <div class="button-group icon-style">
+
+    <span class="label">친구에게 공유하기</span>
+
+    <div class="share-button-group share-icon-style">
       <div class="icon-btn">
-        <a href="#" class="share-btn" id="share-btn">
-          <div class="circle"><i class="fas fa-share-nodes"></i></div>
-            <span class="label">링크복사</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" class="share-btn" id="share-btn">
+          <div class="circle"><i class="fab fa-facebook-f"></i></div>
+        </a>
+      </div>
+      <div class="icon-btn">
+        <a href="#">
+          <div class="circle"><i class="fab fa-x-twitter"></i></div>
+        </a>
+      </div>
+      <div class="icon-btn">
+        <a href="#">
+          <div class="circle"><i class="fas fa-link"></i></div>
         </a>
       </div>
     </div>
+
     <div class="button-group icon-style">
       <div class="icon-btn">
         <a href="index.html">
@@ -53,7 +66,7 @@
           <div class="circle">
             <img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;">
           </div>
-          <span class="label">카카오톡 채널</span>
+          <span class="label">온기브 카카오톡 채널</span>
         </a>
       </div>
     </div>
@@ -69,7 +82,6 @@
       const url = window.location.href;
       navigator.clipboard.writeText(url);
       alert("링크가 복사되었습니다! 친구에게 공유해보세요.");
-      console.log("복사됨")
     });
   </script>
 </body>
