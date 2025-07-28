@@ -91,6 +91,20 @@ html, body {
   transition: width 0.3s ease;
 }
 
+.question-number {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #04587c;
+  margin-bottom: 40px;
+}
+
+.question-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
 .question-box {
   margin-top: 6vh;
   font-size: 20px;

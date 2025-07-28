@@ -162,8 +162,16 @@
 
     questionBox.className = "question-box fade-in";
     optionsBox.className = "options fade-in";
+    
+    const lines = q.question.trim().split('\n');
+    const questionNumber = lines[0].trim();
+    const questionText = lines.slice(1).join('<br>').trim();
 
-    questionBox.innerText = q.question;
+    questionBox.innerHTML = `
+      <div class="question-number">${questionNumber}</div>
+      <div class="question-text">${questionText}</div>
+    `;
+
     optionsBox.innerHTML = "";
 
     q.options.forEach(opt => {
