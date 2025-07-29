@@ -62,16 +62,12 @@ html, body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: url('../assets/img/background.jpg') center/cover no-repeat;
+  background-image: url('//ecimg.cafe24img.com/pg283b14366217017/eleanorco/mbti/cooltide/assets/img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: 1;
-}
-
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: #ffffff;
-  z-index: -1;
+  position: relative; /* ensures background layers work correctly */
 }
 
 .progress-bar {

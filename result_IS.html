@@ -16,17 +16,24 @@
       <h1 class="result-title">피치핑크</h1>
       <h2 class="result-subtitle_IS">"이불 밖은 위험해."</h2>
         <p class="result-desc">
-          여름엔 뭐다? 이불 밖은 위험하다.<br>
-          시원한 냉감 침구에 파묻혀 셀카 한 장, 영상 한 편... 그러다 새벽.<br><br>
+          계절이 바뀌어도, 이 진리는 흔들리지 않죠. 당신은 자신만의 안락한 공간을 철저히 지키는 유형의 사람입니다.<br>
+          당신의 잠옷은 예뻐야 하며, 침대는 반드시 포근해야 합니다.<br>
+          나 자신을 아끼는 데 있어서 타협이란 없습니다.<br>
+          약속은 좋아하지만 진짜 힐링은 포근한 이불 속에서 찾는 타입입니다.<br>
+          여름에는 시원한 냉감이불에 파묻혀 당신의 핸드폰 속에 릴스는 잠들기 전까지 무한 재생이며<br>
+          그냥 누워만 있었을 뿐인데 벌써 새벽 2시.<br><br>
 
-          잠옷은 예쁘고, 침대는 포근해야 하고,<br>
-          나 자신은 가장 소중하니까요.<br><br>
+          📍밀착 케어가 필요한 당신에게, <b style="color: #aa6060;">피치핑크 쿨타이드</b>는 당신만의 여름 무드를 지켜주는 셀프케어 파트너.<br>
+          귀여움, 포근함, 시원함까지 완성된 여름 공간을 지금 만나보세요.<br><br>
 
-          귀찮음 속에서도 여름 감성을 포기하지 않는 당신.<br>
-          친구들과의 약속도 좋지만, 진짜 힐링은 이불 속에 있다는 걸 아는 사람입니다.<br><br>
+          🎨나와 찰떡 궁합 컬러🎨<br>
+          <b style="color: #97cbae;">민트레몬</b><br>
+          피치핑크는 자기만의 공간을 철저히 챙기는 힐링러 라면, <br>
+          보기만 해도 시원하고 깔끔하고 이성적인 여름을 보다 스마트하게 즐길 줄 아는 민트레몬과 만나 <br>
+          완벽한 밸런스가 만들어집니다.<br><br>
 
-          <b style="color: #aa6060;">[피치핑크 쿨타이드]</b>는 당신만의 여름 무드를 지켜주는 셀프케어 파트너.<br>
-          귀여움, 포근함, 시원함까지 완성된 여름 공간을 지금 만나보세요.<br>
+          <b style="color: #aa6060;">피치핑크</b>와 나의 스킨십 거리   : 하루 종일 붙어 있어도 지겹지 않은 그런 사이 (★★★★★)<br>
+          오늘 밤, 꿀잠을 위한 당신의 잇 아이템 : 바디필로우
         </p>
     </div>
 
@@ -36,12 +43,10 @@
     
     <div class="share-button-group share-icon-style">
       <div class="icon-btn">
-        <a href="#">
-          <div class="circle_i"><i class="fab fa-instagram" class="insta-icon"></i></div>
-        </a>
+        <button onclick="shareKakao()" class="circle circle_k"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" alt="kakao" style="width: 5vh;"></button>
       </div>
       <div class="icon-btn">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://myongi.co.kr/mbti_cool/result_IS.html">
           <div class="circle_f"><i class="fab fa-facebook-f" class="facebook-icon"></i></div>
         </a>
       </div>
@@ -68,9 +73,7 @@
       </div>
       <div class="icon-btn">
         <a href="https://pf.kakao.com/_cDfLxj">
-          <div class="circle">
-            <img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;">
-          </div>
+          <div class="circle"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;"></div>
           <span class="label">온기브 카카오톡 채널</span>
         </a>
       </div>
@@ -89,5 +92,24 @@
       alert("링크가 복사되었습니다! 친구에게 공유해보세요.");
     });
   </script>
+<script>
+  if (!Kakao.isInitialized()) {
+    Kakao.init('79a50b539312cd162f05ebe6f486bc94');
+  }
+
+  function shareKakao() {
+    Kakao.Link.sendScrap({
+      requestUrl: 'http://www.myongi.co.kr/',
+      templateId: 122910,
+      templateArgs: {
+              PROFILE : '${PROFILE}',
+        THUMB: '${THUMB}',
+        TITLE: '${TITLE}',
+        DESC: '${DESC}',
+      },
+    });
+  };
+</script>
+
 </body>
 </html>

@@ -14,24 +14,24 @@
     <div class="result-hero-bg_ES"></div>
     <div class="result-text-area">
       <h1 class="result-title">민트레몬</h1>
-      <h2 class="result-subtitle_ES">"더위 쯤은 즐기는 맛으로 이긴다."</h2>
+      <h2 class="result-subtitle_ES">"더위를 참는 게 아니라, 즐기는 거야."</h2>
         <p class="result-desc">
-          여름이 덥다고? 난 더위를 즐긴다!<br>
-          시원한 침구 위에서 맥주 한 캔, 치킨 한 조각,<br>
-          넷플릭스 한 편이면 피로도 순식간에 리셋.<br><br>
-
-          쇼츠보다 더 짜릿한 건<br>
-          이불 속에서 느긋하게 흘러가는 시간.<br>
-          에너지는 넘치지만 집 밖은 귀찮은 당신,<br>
-          실내에서 즐기는 쿨한 여름이 제일 잘 어울립니다.<br><br>
-
+          시원한 냉감이불 위에 누워, 맛있는 야식 한 입, 재밌는 영화 한 편.<br>
           잘 먹고, 잘 쉬고, 잘 자는 것.<br>
-          그게 진짜 여름 힐링이죠.<br><br>
+          그게 진짜 여름 힐링이라는 걸 아는 사람입니다.<br><br>
 
-          집에서 보내는 쿨한 하루,<br>
-          <b style="color: #97cbae;">[민트레몬 쿨타이드]</b>와 함께라면 완벽합니다.<br>
-          영화, 야식, 이불까지… <br>
-          당신만의 홈바캉스를 지금 시작해보세요.<br>
+          📍하루의 피로를 부드럽고 시원하게 덮고,<br>
+          편안한 온도로 잠드는 여름밤을 원하는 당신,<br>
+          <b style="color: #97cbae;">[민트레몬 쿨타이드]</b>와 함께라면 완벽합니다.<br><br>
+
+          🎨나와 찰떡 궁합 컬러🎨<br>
+          <b style="color: #aa6060;">피치핑크</b><br>
+          민트레몬이 상큼하고 쿨한 여름 한 입이라면, 피치핑크는 그 여름을 감싸주는 달콤한 여운이에요.<br>
+          하나는 시원한 민트 소다 같고, 하나는 부드러운 복숭아 아이스크림처럼<br>
+          서로 다른 매력으로 여름의 입체감을 완성해주는 컬러 듀오입니다.<br><br>
+
+          <b style="color: #97cbae;">민트레몬</b>과 나의 스킨십 거리 : 너와 나의 거리는 적당히 딱 좋아! (★★★☆☆)<br>
+          오늘 밤, 꿀잠을 위한 당신의 잇 아이템 : 꿀잠 플레이리스트<br>
         </p>
     </div>
 
@@ -41,12 +41,10 @@
     
     <div class="share-button-group share-icon-style">
       <div class="icon-btn">
-        <a href="#">
-          <div class="circle_i"><i class="fab fa-instagram" class="insta-icon"></i></div>
-        </a>
+        <button onclick="shareKakao()" class="circle circle_k"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" alt="kakao" style="width: 5vh;"></button>
       </div>
       <div class="icon-btn">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://myongi.co.kr/mbti_cool/result_ES.html">
           <div class="circle_f"><i class="fab fa-facebook-f" class="facebook-icon"></i></div>
         </a>
       </div>
@@ -73,9 +71,7 @@
       </div>
       <div class="icon-btn">
         <a href="https://pf.kakao.com/_cDfLxj">
-          <div class="circle">
-            <img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;">
-          </div>
+          <div class="circle"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;"></div>
           <span class="label">온기브 카카오톡 채널</span>
         </a>
       </div>
@@ -94,5 +90,24 @@
       alert("링크가 복사되었습니다! 친구에게 공유해보세요.");
     });
   </script>
+<script>
+  if (!Kakao.isInitialized()) {
+    Kakao.init('79a50b539312cd162f05ebe6f486bc94');
+  }
+
+  function shareKakao() {
+    Kakao.Link.sendScrap({
+      requestUrl: 'http://www.myongi.co.kr/',
+      templateId: 122910,
+      templateArgs: {
+              PROFILE : '${PROFILE}',
+        THUMB: '${THUMB}',
+        TITLE: '${TITLE}',
+        DESC: '${DESC}',
+      },
+    });
+  };
+</script>
+
 </body>
 </html>

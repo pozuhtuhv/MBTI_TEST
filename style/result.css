@@ -294,20 +294,28 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
 .icon-btn .circle,
 .icon-btn .circle_i,
 .icon-btn .circle_f,
-.icon-btn .circle_k,
 .icon-btn .circle_l,
 .icon-btn .circle_x,
-.icon-btn .circle_r {
+.icon-btn .circle_r,
+.icon-btn .circle_k {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background-color: #eeeeee;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 8px;
   font-size: 25px;
   transition: background-color 0.2s;
+}
+
+.icon-btn .circle,
+.icon-btn .circle_i,
+.icon-btn .circle_f,
+.icon-btn .circle_l,
+.icon-btn .circle_x,
+.icon-btn .circle_r {
+  background-color: #eeeeee;
 }
 
 .icon-btn .circle_i { color: #E1306C; }

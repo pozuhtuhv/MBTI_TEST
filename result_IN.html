@@ -14,20 +14,27 @@
     <div class="result-hero-bg_IN"></div>
     <div class="result-text-area">
       <h1 class="result-title">만다린밀크</h1>
-      <h2 class="result-subtitle_IN">"여름 감성주의자."</h2>
+      <h2 class="result-subtitle_IN">"한여름의 몽상가."</h2>
         <p class="result-desc">
+          뜨거운 햇살 아래서도 당신은 ‘대충’이 아닌 ‘진짜’를 고집하는 몽상가입니다.<br>
           무더위 속에서도 포근함은 포기 못 해요.<br>
-          여름에도 이불은 부드럽고, 감성 있어야 진짜 잠이 오죠.<br><br>
+          여름이라고 해서 대충 덮으면 잠 안 와요.<br>
+          부드럽고 감성 있는 이불이어야 진짜 꿀잠이죠.<br><br>
 
-          세탁한 침구 냄새에 코 박고 감탄하고,<br>
-          방 안 공기마저 은은하게 흐를 때<br>
-          정리된 침대에 눕는 순간, 하루가 리셋되는 기분.<br><br>
+          세탁한 침구 냄새에 코 박고 감탄하는 섬세한 감각<br>
+          방 안 공기와 침대 정리까지 꼼꼼히 챙겨 하루를 리셋하는 루틴러<br><br>
 
-          자극적인 차가움보다 적당한 따뜻함,<br>
-          극적인 쿨함보다 고요한 여름밤을 더 사랑하는 당신이라면,<br><br>
+          📍자극적인 차가움보다 적당한 따뜻함,<br>
+          극적인 쿨함보다 고요한 여름밤의 분위기를 가져다주는 <b style="color: #bbaf81;">만다린밀크</b>로, <br>
+          여름밤을 감싸보세요.<br><br>
 
-          <b style="color: #bbaf81;">[만다린밀크 쿨타이드]</b>로 여름밤을 감싸보세요.<br>
-          부드럽고 산뜻한 포근함, 그 감성을 여름에도 놓치지 마세요.<br>
+          🎨나와 찰떡 궁합 컬러🎨<br>
+          <b style="color: #098ac1;">블루소다</b><br>
+          에어컨 바람을 직접 쐬지 않아도 될 만큼, 눈으로도 시원한 무드를 만들어주는 블루소다 컬러죠.<br>
+          감성은 부드럽고 따뜻하게, 체온은 쾌적하고 시원하게, 블루소다는 한여름의 몽상가에게 꼭 필요한 감각적인 벨런스입니다.<br><br>
+
+          <b style="color: #bbaf81;">만다린밀크</b>와 나의 스킨십 거리 : 심장 거리 0cm, 포근함 밀착 완료! (★★★★★)<br>
+          오늘 밤, 꿀잠을 위한 당신의 잇 아이템 : 아로마 캔들<br>
         </p>
     </div>
 
@@ -37,12 +44,10 @@
     
     <div class="share-button-group share-icon-style">
       <div class="icon-btn">
-        <a href="#">
-          <div class="circle_i"><i class="fab fa-instagram" class="insta-icon"></i></div>
-        </a>
+        <button onclick="shareKakao()" class="circle circle_k"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" alt="kakao" style="width: 5vh;"></button>
       </div>
       <div class="icon-btn">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://myongi.co.kr/mbti_cool/result_IN.html">
           <div class="circle_f"><i class="fab fa-facebook-f" class="facebook-icon"></i></div>
         </a>
       </div>
@@ -69,9 +74,7 @@
       </div>
       <div class="icon-btn">
         <a href="https://pf.kakao.com/_cDfLxj">
-          <div class="circle">
-            <img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;">
-          </div>
+          <div class="circle"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;"></div>
           <span class="label">온기브 카카오톡 채널</span>
         </a>
       </div>
@@ -90,5 +93,24 @@
       alert("링크가 복사되었습니다! 친구에게 공유해보세요.");
     });
   </script>
+<script>
+  if (!Kakao.isInitialized()) {
+    Kakao.init('79a50b539312cd162f05ebe6f486bc94');
+  }
+
+  function shareKakao() {
+    Kakao.Link.sendScrap({
+      requestUrl: 'http://www.myongi.co.kr/',
+      templateId: 122910,
+      templateArgs: {
+              PROFILE : '${PROFILE}',
+        THUMB: '${THUMB}',
+        TITLE: '${TITLE}',
+        DESC: '${DESC}',
+      },
+    });
+  };
+</script>
+
 </body>
 </html>

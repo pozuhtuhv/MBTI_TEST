@@ -14,23 +14,30 @@
     <div class="result-hero-bg_EN"></div>
     <div class="result-text-area">
       <h1 class="result-title">블루소다</h1>
-      <h2 class="result-subtitle_EN">"내 잠은 과학이다."</h2>
+      <h2 class="result-subtitle_EN">"여름 꿀잠의 정석."</h2>
         <p class="result-desc">
-          여름밤, 당신의 침실은 하나의 과학실.<br>
-          에어컨 리모컨은 손에, 이불은 정확히 다리 위,<br>
+          여름밤, 당신의 침실은 완벽한 수면 교과서.<br>
+          에어컨 리모컨은 완벽한 온도 컨트롤을 위해 내 손에,<br>
           조명은 수면모드로 완벽하게 세팅.<br><br>
 
           체온과 기분에 맞춰 휴식 루틴을 정밀하게 설계하는<br>
           수면 컨디션 전문가, 바로 당신입니다.<br><br>
 
           시원함과 안정감을 동시에 챙기며,<br>
-          잠들기까지 걸리는 시간은 단 3초.<br>
-          이불 하나로 여름밤을 지배하는<br>
-          진정한 수면 온도 조절 마스터.<br><br>
+          잠들기까지 걸리는 시간은 단 3초.<br><br>
 
-          한 치의 오차도 허용하지 않는 여름밤을 위해,<br>
-          <b style="color: #098ac1;">[블루소다 쿨타이드]</b>가 체온 조절까지 완성해드립니다.<br>
-          당신만의 최적 수면 온도, 지금 바로 맞춰보세요.<br>
+          📍한 치의 오차도 허용하지 않는 당신을 위한 이불,<br>
+          <b style="color: #098ac1;">[블루소다 쿨타이드]</b> 가 체온 조절까지 완성해 드립니다.<br>
+          당신만의 최적 수면 온도, 지금 바로 맞춰보세요.<br><br>
+
+          🎨나와 찰떡 궁합 컬러🎨<br>
+          <b style="color: #bbaf81;">[만다린밀크 쿨타이드]</b><br>
+          서로 다른 온도를 지녔지만 같은 무드를 공유하는 두 컬러가,<br>
+          마치 냉정과 열정 사이처럼 균형 잡힌 여름의 감성을 완성합니다.<br>
+          이 둘이 함께라면 쿨함도 포근함도 놓치지 않을 거예요.<br><br>
+
+          <b style="color: #098ac1;">[블루소다 쿨타이드]</b>와 나의 스킨십 거리 : 한뼘도 놓칠 수 없어. 꼭 붙어있자! (★★★★★)<br>
+          오늘 밤, 꿀잠을 위한 당신의 잇 아이템 : 수면안대<br>
         </p>
     </div>
 
@@ -40,24 +47,13 @@
     
     <div class="share-button-group share-icon-style">
       <div class="icon-btn">
-        <button onclick="shareKakao()">
-          <div class="circle">
-            <img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;">
-          </div>
-        </button>
-      </div>      
-      <div class="icon-btn">
-        <a href="#">
-          <div class="circle_i"><i class="fab fa-instagram" class="insta-icon"></i></div>
-        </a>
+        <button onclick="shareKakao()" class="circle circle_k"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" alt="kakao" style="width: 5vh;"></button>
       </div>
       <div class="icon-btn">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com">
-          <div class="circle_f"><i class="fab fa-facebook-f" class="facebook-icon"></i></div>
-        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://myongi.co.kr/mbti_cool/result_EN.html" target="_blank" class="circle circle_f"><i class="fab fa-facebook-f"></i></a>
       </div>
       <div class="icon-btn">
-        <a href="#">
+        <a href="#" class="circle_x">
           <div class="circle_x"><i class="fab fa-x-twitter"></i></div>
         </a>
       </div>
@@ -79,9 +75,7 @@
       </div>
       <div class="icon-btn">
         <a href="https://pf.kakao.com/_cDfLxj">
-          <div class="circle">
-            <img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;">
-          </div>
+          <div class="circle"><img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;"></div>
           <span class="label">온기브 카카오톡 채널</span>
         </a>
       </div>
@@ -107,8 +101,8 @@
 
   function shareKakao() {
     Kakao.Link.sendScrap({
-      requestUrl: 'http://www.myongi.co.kr/', // 페이지 url
-      templateId: 122910, // 메시지템플릿 번호
+      requestUrl: 'http://www.myongi.co.kr/',
+      templateId: 122910,
       templateArgs: {
               PROFILE : '${PROFILE}',
         THUMB: '${THUMB}',
