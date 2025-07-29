@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style/result.css" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 <body class="fade-start">
   <div class="container">
@@ -38,6 +39,13 @@
     </div>
     
     <div class="share-button-group share-icon-style">
+      <div class="icon-btn">
+        <button onclick="shareKakao()">
+          <div class="circle">
+            <img src="https://ecimg.cafe24img.com/pg283b14366217017/eleanorco/250612/kakaochannel.png" style="width: 5vh;">
+          </div>
+        </button>
+      </div>      
       <div class="icon-btn">
         <a href="#">
           <div class="circle_i"><i class="fab fa-instagram" class="insta-icon"></i></div>
@@ -92,5 +100,24 @@
       alert("링크가 복사되었습니다! 친구에게 공유해보세요.");
     });
   </script>
+<script>
+  if (!Kakao.isInitialized()) {
+    Kakao.init('79a50b539312cd162f05ebe6f486bc94');
+  }
+
+  function shareKakao() {
+    Kakao.Link.sendScrap({
+      requestUrl: 'http://www.myongi.co.kr/', // 페이지 url
+      templateId: 122910, // 메시지템플릿 번호
+      templateArgs: {
+              PROFILE : '${PROFILE}',
+        THUMB: '${THUMB}',
+        TITLE: '${TITLE}',
+        DESC: '${DESC}',
+      },
+    });
+  };
+</script>
+
 </body>
 </html>
