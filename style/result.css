@@ -235,6 +235,11 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   color: #ffffff !important;
 }
 
+.share-title {
+  font-size: 1.2rem;
+  color: #000000;
+}
+
 .share-button-group {
   display: flex;
   justify-content: center;
@@ -273,6 +278,16 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   text-decoration: none;
   color: #000000;
 }
+
+  .insta-icon {
+    color: #E1306C;
+    font-size: 32px;
+  }
+
+  .facebook-icon {
+    color: #1877F2;
+    font-size: 32px;
+  }
 
 .icon-btn .circle {
   width: 56px;
