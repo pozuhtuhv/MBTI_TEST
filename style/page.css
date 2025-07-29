@@ -95,11 +95,11 @@ html, body {
   font-size: 1.5rem;
   font-weight: 600;
   color: #04587c;
-  margin-bottom: 40px;
+  margin-bottom: 2vh;
 }
 
 .question-text {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.5;
   white-space: pre-line;
