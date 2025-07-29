@@ -92,21 +92,21 @@ html, body {
 }
 
 .question-number {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #04587c;
   margin-bottom: 40px;
 }
 
 .question-text {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.5;
   white-space: pre-line;
 }
 
 .question-box {
-  margin-top: 6vh;
+  margin-top: 30px;
   font-size: 20px;
   font-weight: 700;
   text-align: center;
@@ -118,12 +118,14 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 
 .option {
   width: 100%;
   padding: 14px 20px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -194,7 +196,7 @@ html, body {
   align-items: center;
   gap: 8px;
   width: 100%;
-  margin-top: 10%
+  margin-top: 5%
 }
 
 .back-button-wrap {
