@@ -37,7 +37,7 @@
         <div class="progress-bar">
           <div id="progress" class="progress"></div>
         </div>
-        <div id="progress-count" class="progress-count">0/6</div>
+        <div id="progress-count" class="progress-count">1/6</div>
       </div>
     </div>
 
@@ -259,11 +259,11 @@
   function updateProgress() {
   const progress = document.getElementById("progress");
   const percent = (current / questions.length) * 100;
-  progress.style.width = percent + "%";
+  progress.style.width = percent + 17 + "%";
 
   const progressCount = document.getElementById("progress-count");
   if (progressCount) {
-    progressCount.textContent = `${current}/${questions.length}`;
+    progressCount.textContent = `${current + 1}/${questions.length}`;
   }
 }
 </script>
