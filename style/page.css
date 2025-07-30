@@ -67,7 +67,7 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
-  position: relative; /* ensures background layers work correctly */
+  position: relative;
 }
 
 .progress-bar {
