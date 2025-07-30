@@ -39,7 +39,7 @@ html, body {
   background-color: #04587c;
   color: #ffffff;
   cursor: pointer;
-  margin-top: 35vh; /* 조정 */
+  margin-top: 45vh;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
   transition: background-color 0.3s ease;
   appearance: none;
