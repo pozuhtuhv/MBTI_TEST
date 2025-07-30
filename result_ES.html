@@ -85,12 +85,12 @@
   <div class="popup-overlay no-fade" id="popuplist" style="display: none;">
     <div class="popup-content">
       <h3>모든 결과 보기</h3>
-      <ul class="result-list">
-        <li><a href="result_ES.html"><b style="color: #97cbae;">민트레몬</b></a></li>
-        <li><a href="result_EN.html"><b style="color: #098ac1;">블루소다</b></a></li>
-        <li><a href="result_IS.html"><b style="color: #aa6060;">피치핑크</b></a></li>
-        <li><a href="result_IN.html"><b style="color: #bbaf81;">만다린밀크</b></a></li>
-      </ul>
+        <ul class="result-list">
+          <li data-href="result_ES.html"><b style="color: #97cbae;">민트레몬</b></li>
+          <li data-href="result_EN.html"><b style="color: #098ac1;">블루소다</b></li>
+          <li data-href="result_IS.html"><b style="color: #aa6060;">피치핑크</b></li>
+          <li data-href="result_IN.html"><b style="color: #bbaf81;">만다린밀크</b></li>
+        </ul>
       <button onclick="document.getElementById('popuplist').style.display='none'">닫기</button>
     </div>
   </div>
@@ -130,6 +130,14 @@
   document.getElementById("popup_list").addEventListener("click", function (e) {
     e.preventDefault();
     document.getElementById("popuplist").style.display = "block";
+  });
+</script>
+<script>
+  document.querySelectorAll('.result-list li').forEach(li => {
+    li.addEventListener('click', () => {
+      const href = li.getAttribute('data-href');
+      if (href) window.location.href = href;
+    });
   });
 </script>
 </body>

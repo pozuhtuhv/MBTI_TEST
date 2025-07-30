@@ -230,3 +230,17 @@ html, body {
   font-size: 12px;
   color: #04587c;
 }
+
+.progress-bar-container {
+  position: relative;
+  width: 100%;
+}
+
+.progress-count {
+  position: absolute;
+  top: -18px;
+  right: 0;
+  font-size: 0.8rem;
+  color: #04587c;
+  font-weight: 600;
+}

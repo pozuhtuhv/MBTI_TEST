@@ -33,8 +33,11 @@
           <i class="fa-solid fa-chevron-left"></i>
         </button>
       </div>
-      <div class="progress-bar">
-        <div id="progress" class="progress"></div>
+      <div class="progress-bar-container">
+        <div class="progress-bar">
+          <div id="progress" class="progress"></div>
+        </div>
+        <div id="progress-count" class="progress-count">0/6</div>
       </div>
     </div>
 
@@ -252,6 +255,17 @@
       window.location.href = `result_${resultType}.html`;
     }, 400);
   }
+
+  function updateProgress() {
+  const progress = document.getElementById("progress");
+  const percent = (current / questions.length) * 100;
+  progress.style.width = percent + "%";
+
+  const progressCount = document.getElementById("progress-count");
+  if (progressCount) {
+    progressCount.textContent = `${current}/${questions.length}`;
+  }
+}
 </script>
 
 </body>
