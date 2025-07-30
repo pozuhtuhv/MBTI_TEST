@@ -349,3 +349,61 @@ body.fade-in .popup-content { animation-delay: 0.9s; }
   opacity: 1 !important;
   animation: none !important;
 }
+
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 999;
+  display: none;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px 45px;
+  border-radius: 12px;
+  max-width: 300px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 0 10px #00000040;
+}
+.popup-content h3 {
+  margin-top: 0;
+}
+
+.popup-content .result-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+}
+
+.popup-content .result-list li {
+  margin: 0px 7px;
+}
+
+.popup-content .result-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.popup-content button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.no-fade, .no-fade * {
+  animation: none !important;
+  opacity: 1 !important;
+}

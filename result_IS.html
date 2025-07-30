@@ -17,10 +17,14 @@
       <h2 class="result-subtitle_IS">"이불 밖은 위험해."</h2>
         <p class="result-desc">
           당신은 자신만의 안락한 공간을 철저히 지키는 유형의 사람입니다.<br>
-          당신의 잠옷은 예뻐야 하며, 침대는 반드시 포근해야 합니다.<br>
-          나 자신을 아끼는 데 있어서 타협이란 없습니다.<br>
-          약속을 좋아하지만 진짜 힐링은 포근한 이불 속에서 찾는 타입입니다.<br>
-          여름에는 시원한 냉감이불에 파묻혀 핸드폰 속 릴스는 잠들기 전까지 무한 재생.<br>
+          당신의 잠옷은 예뻐야 하며,<br>
+          침대는 반드시 포근해야 합니다.<br>
+          나 자신을 아끼는 데 있어서 타협이란 없습니다.<br><br>
+          
+          약속을 좋아하지만<br>
+          진짜 힐링은 포근한 이불 속에서 찾는 타입입니다.<br>
+          여름에는 시원한 냉감이불에 파묻혀<br>
+          핸드폰 속 릴스는 잠들기 전까지 무한 재생.<br>
           그냥 누워만 있었을 뿐인데 벌써 새벽 2시!<br><br>
 
           밀착 케어가 필요한 당신에게,<br>
@@ -28,14 +32,17 @@
           귀여움, 포근함, 시원함까지 완성된 여름 공간을 지금 만나보세요.<br><br>
 
           🎨<br>
-          나와 찰떡 궁합 컬러<br>
-          <b style="color: #97cbae;">민트레몬</b><br>
+          <b>나와 찰떡 궁합 컬러</b> : <b style="color: #97cbae;">민트레몬</b><br>
           자기만의 공간을 철저히 챙기는 힐링러인 피치핑크는,<br>
           여름을 누구보다 스마트하게 즐길 줄 아는<br>
           민트레몬과 만난다면 완벽한 밸런스를 만들 수 있어요!<br><br>
 
-          <b style="color: #aa6060;">피치핑크</b>와 나의 스킨십 거리   : 하루 종일 붙어 있어도 지겹지 않은 그런 사이 (★★★★★)<br>
-          오늘 밤, 꿀잠을 위한 당신의 잇 아이템 : 바디필로우
+          📌<br><b style="color: #aa6060;">피치핑크</b><b>와 나의 스킨십 거리</b><br>
+          하루 종일 붙어 있어도 지겹지 않은 그런 사이 (★★★★★)<br><br>
+
+          🎁<br>
+          <b>오늘 밤, 꿀잠을 위한 당신의 잇 아이템</b><br>
+          바디필로우
         </p>
     </div>
 
@@ -63,8 +70,8 @@
         </a>
       </div>
     </div>
-
     <a href="https://myongi.co.kr/product/detail.html?product_no=315&cate_no=1&display_group=3&utm_source=myongi_mbti&utm_medium=referral" class="btn link-btn link-btn_IS">MBTI 제품 구경가기</a>
+    <a href="#" class="btn link-btn link-btn_IS" id="popup_list">모든 결과 확인하기</a>
 
     <div class="button-group icon-style">
       <div class="icon-btn">
@@ -81,6 +88,20 @@
       </div>
     </div>
   </div>
+
+  <div class="popup-overlay no-fade" id="popuplist" style="display: none;">
+    <div class="popup-content">
+      <h3>모든 결과 보기</h3>
+      <ul class="result-list">
+        <li><a href="result_ES.html"><b style="color: #97cbae;">민트레몬</b></a></li>
+        <li><a href="result_EN.html"><b style="color: #098ac1;">블루소다</b></a></li>
+        <li><a href="result_IS.html"><b style="color: #aa6060;">피치핑크</b></a></li>
+        <li><a href="result_IN.html"><b style="color: #bbaf81;">만다린밀크</b></a></li>
+      </ul>
+      <button onclick="document.getElementById('popuplist').style.display='none'">닫기</button>
+    </div>
+  </div>
+  
 
   <script>
     window.addEventListener("DOMContentLoaded", () => {
@@ -112,6 +133,11 @@
     });
   };
 </script>
-
+<script>
+  document.getElementById("popup_list").addEventListener("click", function (e) {
+    e.preventDefault();
+    document.getElementById("popuplist").style.display = "block";
+  });
+</script>
 </body>
 </html>

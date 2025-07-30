@@ -29,14 +29,18 @@
           <b style="color: #098ac1;">블루소다 쿨타이드</b> 가 체온 조절까지 완성해 드립니다.<br>
           당신만의 최적 수면 온도, 지금 바로 맞춰보세요.<br><br>
 
-          🎨나와 찰떡 궁합 컬러🎨<br>
-          <b style="color: #bbaf81;">만다린밀크 쿨타이드</b><br>
+          🎨<br>
+          <b>나와 찰떡 궁합 컬러</b> : <b style="color: #bbaf81;">만다린밀크</b><br>
           서로 다른 온도를 지녔지만 같은 무드를 공유하는 두 컬러가,<br>
           마치 냉정과 열정 사이처럼 균형 잡힌 여름의 감성을 완성합니다.<br>
           이 둘이 함께라면 쿨함도 포근함도 놓치지 않을 거예요.<br><br>
 
-          <b style="color: #098ac1;">블루소다 쿨타이드</b>와 나의 스킨십 거리 : 한뼘도 놓칠 수 없어. 꼭 붙어있자! (★★★★★)<br>
-          오늘 밤, 꿀잠을 위한 당신의 잇 아이템 : 수면안대<br>
+          📌<br><b style="color: #098ac1;">블루소다</b><b>와 나의 스킨십 거리</b><br>
+          한뼘도 놓칠 수 없어. 꼭 붙어있자! (★★★★★)<br><br>
+          
+          🎁<br>
+          <b>오늘 밤, 꿀잠을 위한 당신의 잇 아이템</b><br>
+          수면안대<br>
         </p>
     </div>
 
@@ -62,8 +66,8 @@
         </a>
       </div>
     </div>
-    <a href="#" class="btn link-btn link-btn_EN">MBTI 제품 구경가기</a>
-    <a href="https://myongi.co.kr/product/detail.html?product_no=315&cate_no=1&display_group=3&utm_source=myongi_mbti&utm_medium=referral" class="btn link-btn link-btn_EN">모든 결과 확인하기</a>
+    <a href="https://myongi.co.kr/product/detail.html?product_no=315&cate_no=1&display_group=3&utm_source=myongi_mbti&utm_medium=referral" class="btn link-btn link-btn_EN">MBTI 제품 구경가기</a>
+    <a href="#" class="btn link-btn link-btn_EN" id="popup_list">모든 결과 확인하기</a>
 
     <div class="button-group icon-style">
       <div class="icon-btn">
@@ -81,6 +85,19 @@
     </div>
   </div>
 
+  <div class="popup-overlay no-fade" id="popuplist" style="display: none;">
+    <div class="popup-content">
+      <h3>모든 결과 보기</h3>
+      <ul class="result-list">
+        <li><a href="result_ES.html"><b style="color: #97cbae;">민트레몬</b></a></li>
+        <li><a href="result_EN.html"><b style="color: #098ac1;">블루소다</b></a></li>
+        <li><a href="result_IS.html"><b style="color: #aa6060;">피치핑크</b></a></li>
+        <li><a href="result_IN.html"><b style="color: #bbaf81;">만다린밀크</b></a></li>
+      </ul>
+      <button onclick="document.getElementById('popuplist').style.display='none'">닫기</button>
+    </div>
+  </div>
+  
   <script>
     window.addEventListener("DOMContentLoaded", () => {
       document.body.classList.remove("fade-start");
@@ -111,6 +128,11 @@
     });
   };
 </script>
-
+<script>
+  document.getElementById("popup_list").addEventListener("click", function (e) {
+    e.preventDefault();
+    document.getElementById("popuplist").style.display = "block";
+  });
+</script>
 </body>
 </html>
